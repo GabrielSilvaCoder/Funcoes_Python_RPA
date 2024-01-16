@@ -1,0 +1,50 @@
+Funções mais utilizadas:
+
+1 – webdriver.Chrome() / webdriver.Firefox() / webdriver.Edge() – #Inicializa um novo driver para um navegador específico.
+
+from selenium import webdriver
+driver = webdriver.Chrome() 
+
+2 – get(url) – #Navega para uma URL específica.
+
+driver.get(‘https://google.com’)
+
+3 – find_element_by_*() / find_elements_by_*() – Localiza elementos na página usando diferentes estratégias de localização ( por ID, nome, classe, xpath, etc. ).
+
+element = driver.find_element_by_id(“elementId”)
+elements = driver.find_elements_by_class_name(“className”)
+
+4 – send_keys(keys) – #Enviar teclas para um elemento ( geralmente usado para preenchimento de formulários ).
+
+element.send_keys(“texto a ser digitado”)
+
+5 – click() – #Clica em um elemento na página.
+
+element.click()
+
+6 – clear() – #Limpa o conteúdo de um campo de texto.
+
+element.clear()
+
+7 – get_attribute(atribute) – #Obtém o valor de um atributo de um elemento.
+
+valor_src = element.get_attribute(“src”)
+
+8 – submit() – #Submete um formulário.
+
+form = driver.find_element_by_id(“formId”)
+form.submit()
+
+9 – implicitly_wait(seconds) – #Espera implicitamente por um certo período antes de lançar uma exceção se um elemento não for encontrado.
+
+driver.implicitly_wait(10)
+
+10 – WebDriverWait – #aguarda a presença de um elemento antes de continuar. Pode ser combinado com ExpectedConditions.
+
+element = WebDriverWait (driver, 20).until(EC.presence_of_element_located((By.ID, “elementId”))
+
+11 – Screenshot – #Captura uma imagem da tela para fins de registro ou diagnóstico.
+
+driver.save_screenshot(“screenshot.png”)
+
+12 – close() / quit() – #Fecha a janela atual / encerra toda a instância do navegador.
