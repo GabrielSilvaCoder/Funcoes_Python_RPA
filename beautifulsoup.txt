@@ -1,0 +1,60 @@
+1 – Inicialização do BeautifulSoup – #Cria um objeto BeautifulSoup a partir do conteúdo HTML.
+
+from bs4 import BeautifulSoup
+
+# Supondo que o ‘html’ seja o conteúdo HTML da página
+soup = BeautifulSoup (html, ‘html.parser’)
+
+2 – Navegação por Tags – #Encontra tags HTML com base em seus nomes.
+
+# Encontrar a primeira instância da tag ‘div’.
+div_tag = soup.find(‘div’)
+
+# Encontrar todas as instâncias da tag ‘p’
+paragrafos = soup.find_all(‘p’)
+
+3 – Acesso a atributos de Tags – #Obtém valores de atributos de tags HTML.
+
+# Obter o valor do atributo ‘href’ da tag ‘a’.
+link_href = soup.find(‘a’)[‘href’]
+
+4 – Navegação pelos elementos pai/filho – #Navega pelos elementos HTML, acessando os pais, filhos e irmãos.
+
+# Acessar o pai da tag ‘span’
+pai_span = soup.find(‘span’).parent
+
+# Acessar o primeiro filho da tag ‘div’
+primeiro_filho_div = soup.find(‘div’).contents[0]
+
+5 – Busca por Padrões de Texto – #Encontra tags com base no texto que contêm.
+
+# Encontrar a tag que contém o texto ‘Exemplo’
+exemplo_tag = soup.find(text= ‘Exemplo’)
+
+6 – Seletores CSS – #Utiliza seletores CSS para encontrar elementos.
+
+# Encontrar todas as tagas ‘a’ dentro de uma tag ‘div’ com classe ‘menu’
+links_menu = soup.slect(‘div.menu a’)
+
+7 – Extração de Dados de Tabelas – #Facilita a extração de dados de tabelas HTML.
+
+# Supondo que ‘tabela’ seja o objeto BeautifulSoup para a tabela
+linhas_tabela = tabela.find.all(‘tr’)
+for linha in linhas_tabela:
+	colunas = linha.find_all(‘td’)
+	for coluna in colunas:
+		print(coluna.text)
+
+8 – Manipulação de Strings – #Realiza operações de manipulação de strings para limpar ou formatar dados extraídos.
+
+# Remover espaços em branco em excesso em uma string
+texto_formatado = ‘ ‘.join(soup.text.split())
+
+9 – Tratamento de Erros – #Lida com casos em que a tag ou atributo pode não estar presente.
+
+# Evitar erro se a tag ‘imagem’ não estiver presente.
+imagem = soup.find(‘img’)
+if imagem:
+	src = imagem.get(‘src’, ‘N/A’)
+else:
+	Src = ‘N/A’
