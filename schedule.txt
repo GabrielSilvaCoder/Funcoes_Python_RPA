@@ -1,0 +1,27 @@
+1 – Schedule.every(interval).do(funcao) – #Agenda a execução da função especificada em um intervalo de tempo. Pode aceitar intervalos como ‘seconds’, ‘minutes’, ‘hours’, ‘days’,’weeks’, etc.
+
+import schedule
+import time
+
+def minha_tarefa():
+	print(“teste”)
+schedule.every(1).minutes.do(minha_tarefa)
+
+2 – schedule.run_pending() – #Executa todas as tarefas agendadas que estão prontas para serem executadas.
+
+while True:
+	schedule.run_pending()
+
+3 – schedule.every().day.at(hora:minute).do(funcao) – #Agenda a execução da função em um horário específico todos os dias.
+
+4 – schedule.every().Monday.do(função) – #Agenda a execução da função toda segunda-feira.
+
+schedule.every().Monday.at(“08:00”).do(minha_tarefa)
+
+5 – schedule.every().hour.do(funcao) – #agenda a execução da função a cada hora.
+
+6 – schedule.every().seconds(intervalo).do(funcao) – #Agenda a execução da função em um intervalo específico em segundos.
+
+schedule.every(30).seconds.do(minha_tarefa)
+
+7 – Schedule.clear() – #Limpa todas as tarefas agendadas.

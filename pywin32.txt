@@ -1,0 +1,53 @@
+1 – Manipulação de janelas
+
+win32gui.FindWindow(class_name, window_name) – #Encontra uma Janela pelo nome da classe e/ou nome da janela.
+
+win32gui.ShowWindow(hwnd, show_command) – #Exibe ou occulta uma Janela.
+
+win32gui.GetWindowText(hwnd) – #Obtém o texto do tíulo de uma janela.
+
+
+2 – Manipulação de processos
+
+win32process.CreateProcess – #Cria um novo processo.
+
+win32process.TerminateProcess – #termina um processo.
+
+3 – Manipulação de arquivos e diretórios
+
+win32file.CopyFile(src, ds, bFailIfExists) – #Copia um arquivo.
+
+win32file.MoveFile(src, dst) – #Move um arquivo.
+
+win32file.DeleteFile(file_path) – #Exclui um arquivo.
+
+win32file.CreateDirectory(path, security_attributes) – #Cria um novo diretório.
+
+win32file.RemoveDirectory(path) – #Remove um diretório vazio.
+
+4 – Manipulação de Registros do Windows
+
+win32api.RegOpenKeyEx – #Abre uma chave de registro existente.
+
+win32api.RegQueryValueEx – #Le o valor de uma chave de registro.
+
+
+5 – Manipulação de eventos e Threads
+
+win32event.CreateEvent – #Cria um objeto de evento.
+
+win32event.SetEvent – #Define o estado de um objeto de evento.
+
+6 – Manipulação de Serviços do Windows
+
+win32service.OpenSCManager – #abre o gerenciador de serviços.
+
+win32service.OpenService – #Abre um serviço existente.
+
+win32service.StartService – #Inicia um serviço.
+
+win32service.StopService – #Para um serviço.
+
+7 – Comunicação entre aplicações.
+
+win32com.cliente.Dispatch – #Cria uma instância de um objeto COM.

@@ -1,0 +1,55 @@
+1 – Criação de um objeto workbook – #O primeiro passo é criar um objeto ‘WorkBook’ para representar a planilha do Excel.
+
+import xlsxwriter
+
+workbook = xlsxwriter.Workbook(‘planilha.xlsx’)
+
+2 – Adição de uma Planilha (Worksheet) – #É possível adicionar planilhas à pasta de trabalho.
+
+worksheet = workbook.add_worksheet(‘Minha planilha’)
+
+3 – Escrita de Dados – #Adiciona dados a células específicas da planilha.
+
+worksheet.write(‘A1’, ‘Texto na Célula A1’)
+worksheet.write(0, 1, 42) # Linha 1, Coluna 2
+
+4 – Formatação de Células – #Permite aplicar formatações a células, como estilo, fonte, cores etc.
+
+formato_negrito = workbook.add_format({‘bold’: True})
+worksheet.write(‘B1’, ‘Negrito’, formato_negrito)
+
+formato_cor_fundo = workbook.add_format({‘bg_color’: ‘yellow’})
+worksheet.write(‘C1’, ‘Fundo Amarelo’, formato_cor_fundo)
+
+5 – Adição de gráficos – #xlsxwriter suporta a adição de gráficos a uma planilha.
+
+chart = workbook.add_chart({‘type’: ‘column’})
+chart.add_series({‘values’: ‘=Minha Planilha!$B$1:$B$5’})
+worksheet.insert_chart(‘E1’, chart)
+
+6 – AutoFiltro – #adiciona autofiltro a uma tabela.
+
+worksheet.autofilter(‘A1:B5’)
+
+7 – Inserção de imagens – #Permite a inserção de imagens em uma planilha.
+
+worksheet.insert_image(‘A7’, ‘imagem.png’)
+
+8 – Fórmulas – #Adicionar fórmulas a células.
+
+worksheet.write(‘D1’, 10)
+worksheet.write(‘D2’, 20)
+worksheet.write(‘D3’, ‘=SUM(D1:D2)’)
+
+9 – Configuração de largura de Coluna/Altura de Linha – #Define a largura de coluna e altura de linha.
+
+worksheet.set_column(‘A:B’, 15)
+worksheet.set_row(0, 30)
+
+10 – Proteção de Células/Planilha – #Permite proteger células ou a planilha inteira.
+
+worksheet.protect()
+
+11 – Salvamento e Fechamento do Workbook – #Salva e fecha o arquivo do planilha.
+
+workbook.close()

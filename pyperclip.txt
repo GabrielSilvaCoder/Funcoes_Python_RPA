@@ -1,0 +1,18 @@
+1 – Pyperclip.copy(text) – #Copia o texto especificado para a área de transferência.
+
+import pyperclip
+pyperclip.copy(“Texto para copiar”)
+
+2 – Pyperclip.paste() – #Retorna o texto atualmente na área de transferência.
+
+texto_copiado = pyperclip.paste()
+print(texto_copiado)
+
+3 – pyperclip.paste(waitforpaste=True) – #Espera até que algo seja colado na área de transferência, em seguida, retorna o texto. Pode ser útil quando você precisa aguardar a chegada de dados na área de transferência.
+
+Def aguardar_colar():
+	texto_colado = pyperclip.paste(waitForPaste=True)
+	print(“Texto colado:”, texto_colado)
+
+# Execute o código e, em seguida, cole algo na área de transferência manualmente
+aguardar_colar()

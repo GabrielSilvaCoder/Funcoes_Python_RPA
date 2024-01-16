@@ -1,0 +1,12 @@
+1 – getWindowsWithTitle(title) – #Retorna uma lista de todas as janelas cujo título contenha a string especificada.
+
+import pygetwindow as gw
+windows = gw.getWindowsWithTitle(“Minha Janela”)
+
+2 – getActiveWindow() – #Retorna a Janela atualmente ativa.
+
+active_window = gw.getActiveWindow()
+
+3 – getActiveWindowTitle() – #Retorna o título da janela ativa no momento.
+
+active_window_title = gw.getActiveWindowTitle()

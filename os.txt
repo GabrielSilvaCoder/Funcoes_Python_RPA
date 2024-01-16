@@ -1,0 +1,27 @@
+1 – os.getcwd() – #Retorna o diretório de trabalho atual.
+
+diretório_atual = os.getcwd()
+
+2 – os.listdir(caminho) – #Retorna uma lista com  o conteúdo do diretório especificado.
+
+conteúdo_diretorio = os.listdir(“/caminho/do/diretório”)
+
+3 – os.mkdir(caminho) – #Cria um novo diretório.
+
+os.mkdir(“/caminho/do/novo/diretório”)
+
+4 – os.makedirs(caminho) – #Cria diretórios intermediários conforme necessário.
+
+os.makedirs(“/caminho/do/novo/diretório/com/subdiretórios”)
+
+5 – os.remove(caminho_do_arquivo)
+
+os.remove(“/caminho/do/arquivo.txt”)
+
+6 – os.rmdir(caminho_do_diretorio) – #Remove um diretório vazio.
+
+os.rmdir(“/caminho/do/diretório_a_ser_deletado”)
+
+7 – os.rename(origem, destino) – #Renomeia um arquivo ou move um arquivo de um caminho para outro.
+
+os.rename(“antigo_nome.txt”, “novo_nome.txt”)

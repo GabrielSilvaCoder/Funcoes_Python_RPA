@@ -1,0 +1,38 @@
+1 – Mover o mouse – #Move o cursor do mouse para uma posição específica na tela.
+
+import pyautogui
+
+pyautogui.moveTo(100, 100)
+
+2 – Clicar com o Mouse – #Simula cliques do mouse em posições específicas.
+
+pyautogui.click(200, 200)
+
+3 – Escrever texto – #Simula a entrada de texto pelo teclado.
+
+pyautogui.write(‘Olá, mundo!’)
+
+4 – Pressionar teclas – #Simula as teclas do teclado.
+
+pyautogui.press(‘enter’) # Pressiona a tecla Enter
+
+5 – Captura de tela – #Captura uma região específica da tela.
+
+screenshot = pyautogui.screenshot(region=(0,0,800,600))
+screenshot.save(‘captura.png’)
+
+6 – Localizar uma imagem na tela – #Procura por uma imagem específica na tela.
+
+posição = pyautogui.locateOnScreen(‘imagem.png’)
+
+7 – Arrastar e soltar – #Simula o arrastar e soltar do mouse.
+
+pyautogui.dragTo(300,300)
+
+8 – Movimento relativo do mouse – #Move o cursos do mouse em relação a sua posição atual.
+
+pyautogui.move(50, 0)
+
+9 – Obter resolução da tela – #Retorna a largura e altura da tela.
+
+larguraAltura = pyautogui.size()

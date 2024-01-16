@@ -1,0 +1,71 @@
+1 – Leitura de dados – #Pandas suporta a leitura de vários tipos de arquivos, como CSV,Excel, SQL e mais.
+
+import pandas as pd
+
+# Leitura de um arquivo CSV
+df = pd.read_csv(‘dados.csv’)
+
+# Leitura de uma planilha do Excel
+df_excel = pd.read_excel(‘dados.xlsx’)
+
+# Leitura de uma tabela SQL
+consulta_sql = ‘SELECT * FROM tabela’
+df_sql = pd.read_sql_query(consulta_sql, conexao_banco)
+
+2 – Exibição e Exploração de Dados – #Visualização rápida dos dados para entender a estrutura.
+
+# Exibição das primeiras linhas do DataFrame
+print(df.head())
+
+# Informações sobre o DataFrame
+print(df.info())
+
+# Estatísticas descritivas
+print(df.describe())
+
+3 – Seleção e Indexação – #Seleção de dados com base em condições ou critérios específicos.
+
+# Seleção de coluna específica
+coluna_selecionada = df[‘Nome da Coluna’]
+
+# Filtro de dados
+dados_fitrados = df[df[‘Coluna’] > 10]
+
+#Seleção de linhas e colunas
+subset = df.loc[0:10, [‘Coluna1’, ‘Coluna2’]]
+
+
+4 – Manipulação de Dados – #Inclui operações como adicionar, remover e renomear colunas.
+
+# Adição de nova coluna
+df[‘Nova Coluna’] = df[‘Coluna1’] + df [‘Coluna2’]
+
+# Remoção de coluna
+df = df.drop(‘Coluna3’, axis=1)
+
+# Renomeação de coluna
+df = df.rename(columns={‘Antiga Coluna’: ‘Nova Coluna’})
+
+5 – Agrupamento e Agregação – #Agrupa dados com base em uma ou mais colunas e realiza operações de agregação.
+
+# Agrupamento por uma coluna
+grupo = df.groupby(‘Categoria’)
+
+# Agregação de dados
+media_por_grupo = grupo[‘Valor’].mean()
+
+6 – Manipulação de Datas e Tempo – #Funcionalidades avançadas para manipulação de datas e tempo.
+
+# Conversão de coluna para tipo datetime
+df[‘Data’] = pd.to_datetime(df[‘Data’])
+
+# Extração de componentes de data
+df[‘Ano’] = df[‘Data’].dt.year
+
+7 – Operações com Strings – #Manipulação de strings em colunas.
+
+# Conversão para maiúsculas
+df[‘Texto’] = df[‘Text’].str.upper()
+
+# Verificação de padrões
+df[‘Contem_Palavra’] = df[‘Text’].str.contains(‘Palavra’)
