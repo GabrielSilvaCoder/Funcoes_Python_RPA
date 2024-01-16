@@ -1,1 +1,1 @@
-# Funcoes_Python_RPA
+# Lista de funções mais utilizadas para RPA, na linguagem Python.
